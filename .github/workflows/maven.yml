@@ -37,6 +37,13 @@ jobs:
       with:
         name: Test Reports
         path: report.html
+        
+    - name: Upload Screenshot as Artifact
+      if: always()
+      uses: actions/upload-artifact@v4.6.1
+      with:
+        name: Screenshots
+        path: screenshots/        
 
     - name: Test Execution status
       run: echo "Test Execution Completed"
