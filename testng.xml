@@ -7,7 +7,7 @@
 		<parameter name="isHeadless" value="${isHeadless}" />
 		<classes>
 			<class name="com.ui.tests.LoginTest" />
-		</classes>
+                                                                                                                               		</classes>
 	</test>
 
 </suite>
