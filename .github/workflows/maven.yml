@@ -52,9 +52,9 @@ jobs:
     - name: Copy Reports to gh-pages Folder
       if: always()
 
-      run:   |
+      run:  |
         mkdir -p public/extent-reports
-        cp -R reports.html public/extent-reports/
+        cp -R report.html public/extent-reports/
         cp -R screenshots/ public/extent-reports/screenshots/
         ls -l
         
