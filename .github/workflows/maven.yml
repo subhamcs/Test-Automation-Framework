@@ -48,6 +48,27 @@ jobs:
     - name: Test Execution status
       if: always()    
       run: echo "Test Execution Completed"
+
+    - name: Copy Reports to gh-pages Folder
+      if: always()
+
+      run:   |
+        mkdir -p public/extent-reports
+        cp -R reports.html public/extent-reports/
+        cp -R screenshots/ public/extent-reports/screenshots/
+        ls -l
+        
+    
+    - name: Deploy to GitHub Pages
+      if: always()
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: public/extent-reports/
+        token: ${{ secret.PAT1234 }}
+        clean: true
+
+      
+
       
 
 
