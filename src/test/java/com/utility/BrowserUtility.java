@@ -3,11 +3,14 @@ package com.utility;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -97,8 +100,26 @@ public abstract class BrowserUtility {
 		element.sendKeys(texttoEnter);
 	}
 
+	public void enterSepacialKey(By locator, Keys keyToEnter) {
+		WebElement element = driver.get().findElement(locator);
+		element.sendKeys(keyToEnter);
+	}
+
 	public String getVisibleText(By locator) {
 		WebElement element = driver.get().findElement(locator);
+		return element.getText();
+	}
+
+	public List<String> getAllVisibleText(By locator) {
+		List<WebElement> elementList = driver.get().findElements(locator);
+		List<String> visibleTextList = new ArrayList<String>();
+		for(WebElement element: elementList) {		
+			 System.out.println(getVisibleText(element));
+			 visibleTextList.add(getVisibleText(element));
+			}
+		return visibleTextList;
+	}
+	public String getVisibleText(WebElement element) {
 		return element.getText();
 	}
 

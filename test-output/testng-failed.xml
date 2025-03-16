@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ui.tests.LoginTest">
+      <class name="com.ui.tests.SearchProductTest">
         <methods>
+          <include name="verifyProductSearchTest"/>
           <include name="setup"/>
-          <include name="loginCSVTest" invocation-numbers="1"/>
-          <include name="loginTest" invocation-numbers="1"/>
-          <include name="loginExcelTest" invocation-numbers="1"/>
+          <include name="setup"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.ui.tests.LoginTest -->
+      </class> <!-- com.ui.tests.SearchProductTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -12,6 +12,7 @@ import com.utility.JSONUtility;
 public final class HomePage extends BrowserUtility {
 
 	private static final By SIGNIN_LINK_LOCATOR = By.xpath("//a[contains(text(),'Sign in')]");
+	
 	private static ThreadLocal<WebDriver> driverLocal = new ThreadLocal<WebDriver>();
 
 	public HomePage(Browser browserName, boolean isHeadless) {
